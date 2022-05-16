@@ -50,33 +50,34 @@ public class mainRestaraunt {
                 "17. Make Stationary Order \n"
 
         );
-        Scanner scanner = new Scanner(System.in);
-		int chosenOption = scanner.nextInt();
-//        mainMenuSwitch(chosenOption);
+        try (Scanner scanner = new Scanner(System.in)) {
+			int chosenOption = scanner.nextInt();
+			mainMenuSwitch(chosenOption);
+		}
 
     }
 
-//    public static void mainMenuSwitch(int chosenOption){
-//        switch(chosenOption){
-//            case 1 -> kitchen.startKitchen();
-//            case 2 -> kitchen.stopKitchen();
-//            case 3 -> Order.startMakingOrders(DefaultOrders, onlineOrders);
-//            case 4 -> Order.stop 
-//            case 5 -> { mainMenu();Order.showOrders(currentOrders);}
-//            case 6 -> { mainMenu();Order.showOrders(previousOrders);}
-//            case 7 -> { mainMenu();employees.forEach(System.out::println);}
-//            case 8 ->  // !!!
-//            case 9 -> addEmployee();
-//            case 10 -> Menu.remove()
-//            case 11 -> addEmployee();
-//            case 12 -> fireEmployee();
-//            case 13 -> Menu.showMenu(menu);
-//            case 14 -> Menu.onlyVegan(menu);
-//            case 15 -> Menu.onlySpicy(menu);
-//            case 16 -> makeOnlineOrder();
-//            case 17 -> makeStationaryOrder();
-//        }
-//    }
+    public static void mainMenuSwitch(int chosenOption){
+        switch(chosenOption){
+            case 1 -> Kitchen.startKitchen();
+            case 2 -> Kitchen.stopKitchen();
+            case 3 -> Order.startMakingOrders(DefaultOrders, onlineOrders);
+            case 4 -> Order.stop();
+            case 5 -> { mainMenu();Order.showOrders(currentOrders);}
+            case 6 -> { mainMenu();Order.showOrders(previousOrders);}
+            case 7 -> { mainMenu();employees.forEach(System.out::println);}
+            case 8 -> Menu.stop();
+            case 9 -> addEmployee();
+            case 10 -> Menu.remove();
+            case 11 -> addEmployee();
+            case 12 -> fireEmployee();
+            case 13 -> Menu.showMenu(menu);
+            case 14 -> Menu.onlyVegan(menu);
+            case 15 -> Menu.onlySpicy(menu);
+            case 16 -> makeOnlineOrder();
+            case 17 -> makeStationaryOrder();
+        }
+    }
 
     public static void addEmployee(){
 
@@ -104,18 +105,17 @@ public class mainRestaraunt {
         telephoneNumber = phoneNumberScanner.nextInt();
         System.out.println("Which type of employee you want to employ? \n1.Cooker\n2.Waiter\n3.Supplier");
         int choosenOption = addingEmployeeScanner.nextInt();
-//        switch(choosenOption){
-//           case 1 -> emp = (Employee) new CookersImpl(empName, empSurname, age, telephoneNumber, LocalDate.now());
-//           case 2 -> {emp = (Employee) new WaiterImpl(empName, empSurname, age, telephoneNumber, LocalDate.now());}
-//           case 3 -> emp = (Employee) new SupplierImpl(empName, empSurname, age, telephoneNumber, LocalDate.now());
-//           default -> { System.out.println("Bad type. You have to add Employee again"); addEmployee();}
+        switch(choosenOption){
+           case 1 -> emp = (Employee) new CookersImpl(empName, empSurname, age, telephoneNumber, LocalDate.now());
+           case 2 -> {emp = (Employee) new WaiterImpl(empName, empSurname, age, telephoneNumber, LocalDate.now());}
+           case 3 -> emp = (Employee) new SupplierImpl(empName, empSurname, age, telephoneNumber, LocalDate.now());
+           default -> { System.out.println("Bad type. You have to add Employee again"); addEmployee();}
         }
-//        System.out.println("!Added a new Employee! \n");
-//        employees.add(emp);
+        System.out.println("!Added a new Employee! \n");
+        employees.add(emp);
+        mainMenu();
 
-//        mainMenu();
-
-//    }
+    }
 
     public static void fireEmployee(){
         Scanner empId = new Scanner(System.in);

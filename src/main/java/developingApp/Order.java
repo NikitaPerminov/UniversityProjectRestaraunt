@@ -159,4 +159,8 @@ public abstract class Order extends ArrayList<Dishes> {
                 .collect(Collectors.toList());
     }
 
+	public static Object stop() {
+		return null;
+	}
+
 }

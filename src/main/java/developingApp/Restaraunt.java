@@ -11,7 +11,13 @@ public class Restaraunt {
 	    public static void main(String[] args) {
 
 	        Menu menu = Menu.initializeMenu();
-	        ArrayList<Employee> employees = Employee.initializeEmployees();
+	        ArrayList<Employee> employees = null;
+			try {
+				employees = Employee.initializeEmployees();
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+			}
 
 	        ArrayList<Order> onlineOrders = new ArrayList<>();
 	        ArrayList<Order> DefaultOrders = new ArrayList<>();

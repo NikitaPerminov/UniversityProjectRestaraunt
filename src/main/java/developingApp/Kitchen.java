@@ -18,11 +18,11 @@ import java.util.stream.Collectors;
 
 	    private static ArrayList<Employee> CookersImpl = makeCookersArray(employees);
 
-	    public void startKitchen(){
+	    public static void startKitchen(){
 	        isOpened = true;
 	        System.out.println("Kitchen is opened");
 	    }
-	    public void stopKitchen(){
+	    public static void stopKitchen(){
 	        isOpened = false;
 	        System.out.println("Kitchen is closed");
 	    }
@@ -33,16 +33,17 @@ import java.util.stream.Collectors;
 	                .collect(Collectors.toList());
 	    }
 
-//	    public double checkNumberOfCookers(){
-//	        return switch (makeCookersArray(employees).size()){
-//	            case 1 -> decreasedPercentages = 1;
-//	            case 2 -> decreasedPercentages = 1.9;
-//	            case 3 -> decreasedPercentages = 2.8;
-//	            case 4 -> decreasedPercentages = 3.2;
-//	            default -> decreasedPercentages = 0;
+	    public double checkNumberOfCookers(){
+	        double decreasedPercentages;
+			return switch (makeCookersArray(employees).size()){
+	            case 1 -> decreasedPercentages = 1;
+	            case 2 -> decreasedPercentages = 1.9;
+	            case 3 -> decreasedPercentages = 2.8;
+	            case 4 -> decreasedPercentages = 3.2;
+	            default -> decreasedPercentages = 0;
 
-//	        };
-//	    }
+	        };
+	    }
 
 	    public static boolean isOpened() {
 	        return isOpened;

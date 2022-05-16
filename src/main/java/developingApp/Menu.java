@@ -50,4 +50,14 @@ public class Menu extends ArrayList<Dishes> {
         menu.stream().filter(x -> x.isSpicy()).forEach(x -> System.out.println(x.toStringInMenu()));
     }
 
+
+	public static Object stop() {
+		return null;
+	}
+
+
+	public static Object remove() {
+		return null;
+	}
+
 }
